@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-6">
+    <section id="contact" suppressHydrationWarning className="relative py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -138,6 +138,7 @@ export default function Contact() {
                   name:
                 </label>
                 <input
+                  suppressHydrationWarning
                   type="text"
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
@@ -151,6 +152,7 @@ export default function Contact() {
                   email:
                 </label>
                 <input
+                  suppressHydrationWarning
                   type="email"
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
@@ -164,6 +166,7 @@ export default function Contact() {
                   message:
                 </label>
                 <textarea
+                  suppressHydrationWarning
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   required
@@ -173,6 +176,7 @@ export default function Contact() {
                 />
               </div>
               <button
+                suppressHydrationWarning
                 type="submit"
                 disabled={sending}
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#C084FC] text-[#050505] font-mono text-sm font-semibold rounded-lg hover:bg-[#A78BFA] transition-colors disabled:opacity-50"

@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
+    <section suppressHydrationWarning className="relative min-h-screen flex items-center justify-center px-6">
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Left - Text */}
@@ -67,12 +67,14 @@ export default function Hero() {
               className="flex justify-center md:justify-start gap-4"
             >
               <button
+                suppressHydrationWarning
                 onClick={() => scrollTo("projects")}
                 className="px-6 py-3 bg-[#C084FC] text-[#050505] font-mono text-sm font-semibold rounded-lg hover:bg-[#A78BFA] transition-colors"
               >
                 View Projects
               </button>
               <button
+                suppressHydrationWarning
                 onClick={() => scrollTo("contact")}
                 className="px-6 py-3 border border-[#2A2A2A] text-[#F5F5F5] font-mono text-sm rounded-lg hover:border-[#C084FC] hover:text-[#C084FC] transition-colors"
               >

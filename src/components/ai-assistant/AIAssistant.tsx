@@ -108,7 +108,7 @@ export default function AIAssistant() {
   };
 
   return (
-    <section className="relative py-24 px-6">
+    <section suppressHydrationWarning className="relative py-24 px-6">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -203,6 +203,7 @@ export default function AIAssistant() {
           <div className="border-t border-[#2A2A2A] p-3">
             <div className="flex gap-2">
               <input
+                suppressHydrationWarning
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -211,6 +212,7 @@ export default function AIAssistant() {
                 className="flex-1 bg-[#111111] border border-[#2A2A2A] rounded-lg px-4 py-2 text-sm text-[#F5F5F5] placeholder-[#8A8A8A] focus:outline-none focus:border-[#C084FC] transition-colors font-mono"
               />
               <button
+                suppressHydrationWarning
                 onClick={handleSend}
                 className="px-4 py-2 bg-[#C084FC] text-[#050505] rounded-lg hover:bg-[#A78BFA] transition-colors"
               >
