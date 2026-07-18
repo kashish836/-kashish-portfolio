@@ -41,6 +41,21 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            // Block Dashlane from setting fdprocessedid on any element
+            var origSetAttribute = Element.prototype.setAttribute;
+            Element.prototype.setAttribute = function(name, value) {
+              if (name === 'fdprocessedid') return;
+              return origSetAttribute.call(this, name, value);
+            };
+            var origSetAttributeNode = Element.prototype.setAttributeNode;
+            Element.prototype.setAttributeNode = function(attr) {
+              if (attr && attr.name === 'fdprocessedid') return attr;
+              return origSetAttributeNode.call(this, attr);
+            };
+          })();
+        ` }} />
         <style>{`
           * { cursor: none !important; }
           @media (pointer: coarse) { * { cursor: auto !important; } }
