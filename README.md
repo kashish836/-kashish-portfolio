@@ -2,7 +2,7 @@
 
 # KASHISH BHIWAPURKAR
 
-### AI Engineer · ML Enthusiast · Flutter Developer
+### AI/ML Engineer · Builder · Data Science
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## About
 
-Building intelligent systems that solve real-world problems. Passionate about AI, machine learning, and creating accessible technology through open-source contributions.
+Data Science student building practical AI/ML systems across machine learning, deep learning, computer vision, cloud AI, and software development. Currently pursuing B.Tech in Data Science at G H Raisoni College of Engineering, Nagpur.
 
 ---
 
@@ -18,13 +18,11 @@ Building intelligent systems that solve real-world problems. Passionate about AI
 
 | Domain | Technologies |
 |--------|-------------|
-| **AI/ML** | TensorFlow, PyTorch, Keras, NumPy, Pandas |
-| **NLP** | BERT, GPT, Transformers, Language Modeling |
-| **Computer Vision** | YOLO, Image Classification, Object Detection |
-| **Mobile** | Flutter, Dart, Firebase, Android |
-| **Backend** | Python, FastAPI, Node.js |
-| **Databases** | MongoDB, Firebase Firestore |
-| **Tools** | Git, Docker, Linux, VS Code |
+| **Languages** | Python, C++, SQL, JavaScript, HTML, CSS |
+| **Machine Learning** | Scikit-learn, TensorFlow, Keras, PyTorch, Pandas, NumPy |
+| **AI** | Machine Learning, Deep Learning, Computer Vision, NLP, Generative AI |
+| **Tools / Platforms** | Git, GitHub, VS Code, Jupyter, Google Colab, AWS, Vercel, Supabase, Figma |
+| **Frontend / Design** | React, Next.js, Tailwind CSS, Figma, Responsive UI, UI/UX |
 
 ---
 
@@ -32,20 +30,54 @@ Building intelligent systems that solve real-world problems. Passionate about AI
 
 | Project | Description | Tech | Links |
 |---------|-------------|------|-------|
-| **SignLingo** | Real-time ISL ↔ spoken language translator with avatar + voice feedback | TensorFlow, BERT, YOLO, Flutter, FastAPI | [GitHub](https://github.com/kashish836/ISL-Translator) |
-| **MediBot** | NLP chatbot for symptom analysis & drug recommendations | Python, NLP, TensorFlow | [GitHub](https://github.com/kashish836/MediBot) |
-| **Linguistic Explorer** | AI-powered language learning with speech recognition | Flutter, Gemini API, Firebase | [GitHub](https://github.com/kashish836/Linguistic-Explorer) |
-| **Voice Bridge** | Accessible voice-based interface for disabled users | Flutter, Gemini API, Speech Recognition | [GitHub](https://github.com/kashish836/Voice-Accessible-AI) |
-| **Crop Disease Detection** | Real-time crop disease diagnosis using CNN | TensorFlow, Python, Deep Learning | [GitHub](https://github.com/kashish836/Crop-Disease-Detection) |
-| **Face Detection** | Real-time face detection with bounding boxes | Python, OpenCV, YOLO | [GitHub](https://github.com/kashish836/face-detection) |
+| **ISL Translator** | Real-time Indian Sign Language recognition using computer vision and deep learning | Python, OpenCV, MediaPipe, TensorFlow, Keras, TFLite, Flutter | [GitHub](https://github.com/kashish836/isl-translator.git) |
+| **Fashion Recommender System** | AI-powered fashion recommendation engine | Python, Machine Learning, OpenCV | [GitHub](https://github.com/kashish836) |
+| **Diabloom AI** | Intelligent diabetes management system | Python, AI/ML, Healthcare | [GitHub](https://github.com/kashish836) |
+| **Loan Prediction System** | ML-based loan approval prediction | Python, Scikit-learn, Pandas | [GitHub](https://github.com/kashish836) |
+| **Krishi Sakhi** | AI-powered agriculture assistant for farmers | Python, Machine Learning, NLP | [GitHub](https://github.com/kashish836) |
+| **CanCare AI** | AI-driven cancer detection support system | Python, Deep Learning, Computer Vision | [GitHub](https://github.com/kashish836) |
+| **Snuggle Glow** | Modern responsive web platform with strong UX | React, HTML, CSS, JavaScript | [GitHub](https://github.com/kashish836) |
+
+---
+
+## ISL Translator — Key Stats
+
+| Metric | Value |
+|--------|-------|
+| Sign Classes | 35 |
+| Landmark Samples | 41,175 |
+| Webcam Accuracy | ~82% |
+| CPU FPS | 11–35 |
+| APK Size | ~53 MB |
+
+---
+
+## Experience
+
+| Role | Organization | Period |
+|------|-------------|--------|
+| Operations Manager | ACM GHRCE Student Chapter | 2025 — Present |
+| Technical Intern | SCOE E-Cell | 2025 — Present |
+| Virtual Intern | Deloitte | 2025 |
+| Virtual Intern | Tata | 2025 |
 
 ---
 
 ## Education
 
-**B.Tech in Computer Science & Engineering**  
-Vellore Institute of Technology, Vellore · 2022 – 2026  
-CGPA: **8.39 / 10**
+**B.Tech — Data Science**  
+G H Raisoni College of Engineering, Nagpur · 2024 – 2028  
+CGPA: **3.39 / 4.0**
+
+---
+
+## Certifications & Community
+
+- AWS AI & ML Scholars — 2026
+- AWS Certified Machine Learning Engineer – Associate (In Progress)
+- SBI Hackathon @ GFF 2026
+- Smart India Hackathon 2025 — Krishi Sakhi
+- AWS Builder Center
 
 ---
 
@@ -54,7 +86,6 @@ CGPA: **8.39 / 10**
 | Channel | Link |
 |---------|------|
 | Email | bhiwapurkarkashish0836@gmail.com |
-| Phone | +91 8468883531 |
 | GitHub | [github.com/kashish836](https://github.com/kashish836) |
 | LinkedIn | [linkedin.com/in/kashish-bhiwapurkar](https://www.linkedin.com/in/kashish-bhiwapurkar/) |
 
@@ -74,7 +105,7 @@ npm install
 npm run dev
 
 # Build for production
-npx next build --webpack
+npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -83,6 +114,6 @@ Open [http://localhost:3000](http://localhost:3000).
 
 <div align="center">
 
-*"Chapter One is Still Being Written..."*
+*"Building intelligent systems, one experiment at a time."*
 
 </div>

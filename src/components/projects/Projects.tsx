@@ -1,237 +1,215 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, GitBranch, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { GitBranch, ArrowUpRight } from "lucide-react";
 
-const projects = [
+const featuredProject = {
+  number: "01",
+  name: "ISL Translator",
+  subtitle:
+    "Real-time Indian Sign Language recognition using computer vision and deep learning.",
+  description:
+    "A real-time Indian Sign Language recognition system that uses MediaPipe landmarks and a deep learning model to recognize signs through a webcam and provide predictions through a Flutter application.",
+  stack: [
+    "Python",
+    "OpenCV",
+    "MediaPipe",
+    "TensorFlow",
+    "Keras",
+    "TensorFlow Lite",
+    "Flutter",
+  ],
+  stats: [
+    { label: "Sign classes", value: "35" },
+    { label: "Landmark samples", value: "41,175" },
+    { label: "Webcam accuracy", value: "~82%" },
+    { label: "CPU FPS", value: "11-35" },
+    { label: "APK size", value: "~53 MB" },
+  ],
+  github: "https://github.com/kashish836/isl-translator.git",
+};
+
+const otherProjects = [
   {
-    id: 1,
-    name: "ISL Translator",
-    status: "DEPLOYED",
-    description:
-      "Real-time Indian Sign Language Translator that recognizes hand gestures and converts them into text and speech.",
-    stack: ["Flutter", "TensorFlow", "TensorFlow Lite", "MediaPipe", "OpenCV", "Python"],
-    highlights: [
-      "35 gesture classes",
-      "41000+ landmark samples",
-      "Text-to-Speech support",
-      "99.96% accuracy",
-    ],
+    number: "02",
+    name: "Fashion Recommender System",
+    description: "AI-powered fashion recommendation engine.",
+    stack: ["Python", "Machine Learning", "OpenCV"],
     github: "https://github.com/kashish836",
-    demo: "#",
-    color: "#C084FC",
   },
   {
-    id: 2,
+    number: "03",
+    name: "Diabloom AI",
+    description: "Intelligent diabetes management system.",
+    stack: ["Python", "AI/ML", "Healthcare"],
+    github: "https://github.com/kashish836",
+  },
+  {
+    number: "04",
+    name: "Loan Prediction System",
+    description: "ML-based loan approval prediction.",
+    stack: ["Python", "Scikit-learn", "Pandas"],
+    github: "https://github.com/kashish836",
+  },
+  {
+    number: "05",
     name: "Krishi Sakhi",
-    status: "COMPLETED",
-    description:
-      "AI-powered agriculture assistant designed to support farmers with intelligent recommendations and accessible technology.",
+    description: "AI-powered agriculture assistant for farmers.",
     stack: ["Python", "Machine Learning", "NLP"],
-    highlights: [
-      "AI-powered recommendations",
-      "Farmer-friendly interface",
-      "Intelligent crop insights",
-      "Accessible technology",
-    ],
     github: "https://github.com/kashish836",
-    demo: "#",
-    color: "#4ADE80",
   },
   {
-    id: 3,
+    number: "06",
+    name: "CanCare AI",
+    description: "AI-driven cancer detection support system.",
+    stack: ["Python", "Deep Learning", "Computer Vision"],
+    github: "https://github.com/kashish836",
+  },
+  {
+    number: "07",
     name: "Snuggle Glow",
-    status: "COMPLETED",
-    description:
-      "Modern and responsive web platform with strong emphasis on user experience and visual aesthetics.",
-    stack: ["HTML", "CSS", "JavaScript", "React"],
-    highlights: [
-      "Responsive design",
-      "Modern UI/UX",
-      "Visual aesthetics focus",
-      "Cross-browser compatible",
-    ],
+    description: "Responsive web platform with strong UX.",
+    stack: ["React", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/kashish836",
-    demo: "#",
-    color: "#60A5FA",
-  },
-  {
-    id: 4,
-    name: "Ananda Restaurant",
-    status: "COMPLETED",
-    description:
-      "Restaurant website delivering an engaging digital dining experience with interactive components.",
-    stack: ["HTML", "CSS", "JavaScript", "React"],
-    highlights: [
-      "Interactive components",
-      "Digital dining experience",
-      "Engaging UI",
-      "Menu management",
-    ],
-    github: "https://github.com/kashish836",
-    demo: "#",
-    color: "#60A5FA",
-  },
-  {
-    id: 5,
-    name: "Flashcard Application",
-    status: "COMPLETED",
-    description:
-      "Smart learning platform designed to help users retain information effectively using flashcard-based learning.",
-    stack: ["Flutter", "Firebase"],
-    highlights: [
-      "Flashcard-based learning",
-      "Smart retention system",
-      "Cloud sync with Firebase",
-      "Progress tracking",
-    ],
-    github: "https://github.com/kashish836",
-    demo: "#",
-    color: "#A78BFA",
-  },
-  {
-    id: 6,
-    name: "Civic-Eye",
-    status: "HACKATHON",
-    description:
-      "Technology-driven project addressing real-world challenges through innovation and problem-solving.",
-    stack: ["AI/ML", "Web Technologies"],
-    highlights: [
-      "Real-world problem solving",
-      "Hackathon project",
-      "Innovation-driven",
-      "AI/ML integration",
-    ],
-    github: "https://github.com/kashish836",
-    demo: "#",
-    color: "#F87171",
   },
 ];
 
 export default function Projects() {
-  const [expandedId, setExpandedId] = useState<number | null>(null);
-
   return (
-    <section id="projects" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="work" className="py-24 lg:py-32 px-6 lg:px-12">
+      <div className="mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-20"
         >
-          <p className="font-mono text-sm text-[#8A8A8A] mb-2">
-            <span className="text-[#8A8A8A]">$</span> ls projects/
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-12">
-            Featured <span className="text-gradient">Projects</span>
+          <p className="section-label mb-4">02 / Work</p>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+            Featured projects
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div
-                className="rounded-lg border border-[#2A2A2A] bg-[#0a0a0a] p-5 overflow-hidden hover:border-[#C084FC]/30 transition-all cursor-pointer"
-                onClick={() =>
-                  setExpandedId(expandedId === project.id ? null : project.id)
-                }
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <ChevronRight
-                        className={`w-4 h-4 text-[#8A8A8A] transition-transform ${
-                          expandedId === project.id ? "rotate-90" : ""
-                        }`}
-                      />
-                      <span
-                        className="text-xs font-mono px-2 py-0.5 rounded"
-                        style={{
-                          backgroundColor: `${project.color}22`,
-                          color: project.color,
-                        }}
-                      >
-                        {project.status}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-semibold text-[#F5F5F5]">
-                      {project.name}
-                    </h3>
-                    <p className="text-sm text-[#8A8A8A] mt-1">
-                      {project.description}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-24"
+        >
+          <div className="relative border border-white/10 bg-[#0a0a0a] overflow-hidden">
+            <div className="absolute top-0 right-0 p-8 lg:p-12 pointer-events-none select-none">
+              <span className="project-number">{featuredProject.number}</span>
+            </div>
+
+            <div className="relative p-8 lg:p-16">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="px-3 py-1 text-[10px] font-mono font-medium tracking-[0.15em] text-[#4ade80] bg-[#4ade80]/10 border border-[#4ade80]/20">
+                  DEPLOYED
+                </span>
+                <span className="text-xs font-mono text-[#71717a]">
+                  Featured Project
+                </span>
+              </div>
+
+              <h3 className="text-3xl lg:text-5xl font-bold tracking-tight mb-4">
+                {featuredProject.name}
+              </h3>
+
+              <p className="text-lg lg:text-xl text-[#a1a1aa] max-w-3xl mb-8 leading-relaxed">
+                {featuredProject.subtitle}
+              </p>
+
+              <p className="text-[#71717a] max-w-2xl mb-10 leading-relaxed">
+                {featuredProject.description}
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mb-10 py-8 border-y border-white/5">
+                {featuredProject.stats.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-2xl lg:text-3xl font-bold text-white mb-1">
+                      {stat.value}
+                    </p>
+                    <p className="text-xs font-mono text-[#71717a] uppercase tracking-wider">
+                      {stat.label}
                     </p>
                   </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 rounded text-xs font-mono bg-[#111111] text-[#A78BFA]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <AnimatePresence>
-                  {expandedId === project.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="border-t border-[#2A2A2A] mt-4 pt-4">
-                        <p className="font-mono text-xs text-[#C084FC] mb-3">
-                          $ cat highlights.txt
-                        </p>
-                        <ul className="space-y-2">
-                          {project.highlights.map((item) => (
-                            <li
-                              key={item}
-                              className="text-sm text-[#CCCCCC] flex items-center gap-2"
-                            >
-                              <span className="text-[#C084FC]">→</span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-
-                        <div className="flex gap-3 mt-6">
-                          <a
-                            href={project.github}
-                            className="flex items-center gap-2 px-4 py-2 rounded border border-[#2A2A2A] text-sm font-mono text-[#F5F5F5] hover:border-[#C084FC] hover:text-[#C084FC] transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <GitBranch className="w-4 h-4" />
-                            Code
-                          </a>
-                          <a
-                            href={project.demo}
-                            className="flex items-center gap-2 px-4 py-2 rounded bg-[#C084FC] text-[#050505] text-sm font-mono font-semibold hover:bg-[#A78BFA] transition-colors"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            Demo
-                          </a>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                ))}
               </div>
-            </motion.div>
-          ))}
+
+              <div className="flex flex-wrap gap-2 mb-10">
+                {featuredProject.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 text-xs font-mono text-[#d4d4d8] bg-white/5 border border-white/10"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={featuredProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors"
+                >
+                  <GitBranch className="w-4 h-4" />
+                  View Code
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        <div>
+          <p className="text-sm font-mono text-[#71717a] mb-8 uppercase tracking-wider">
+            Other projects
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {otherProjects.map((project, i) => (
+              <motion.div
+                key={project.number}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+              >
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block p-6 border border-white/5 bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.04] transition-colors h-full"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-3xl font-bold text-white/10">
+                      {project.number}
+                    </span>
+                    <ArrowUpRight className="w-4 h-4 text-[#71717a] group-hover:text-white transition-colors" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    {project.name}
+                  </h4>
+                  <p className="text-sm text-[#71717a] mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 text-[10px] font-mono text-[#a1a1aa] bg-white/5"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

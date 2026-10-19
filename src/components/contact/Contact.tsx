@@ -1,198 +1,90 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, GitBranch, Globe, Send } from "lucide-react";
+import { ArrowUpRight, Mail, GitBranch, Globe, FileText } from "lucide-react";
 
-const WEB3FORMS_KEY = "YOUR_WEB3FORMS_KEY_HERE";
+const links = [
+  {
+    icon: GitBranch,
+    label: "GitHub",
+    href: "https://github.com/kashish836",
+    handle: "@kashish836",
+  },
+  {
+    icon: Globe,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/kashish-bhiwapurkar/",
+    handle: "kashish-bhiwapurkar",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:bhiwapurkarkashish0836@gmail.com",
+    handle: "bhiwapurkarkashish0836@gmail.com",
+  },
+  {
+    icon: FileText,
+    label: "Resume",
+    href: "/Kashish_Bhiwapurkar_Resume.pdf",
+    handle: "Download PDF",
+  },
+];
 
 export default function Contact() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSending(true);
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
-          subject: `New message from ${formState.name} — Portfolio`,
-          from_name: "Kashish Portfolio",
-        }),
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-        setFormState({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitted(false), 5000);
-      }
-    } catch {
-      // silent fail
-    }
-
-    setSending(false);
-  };
-
   return (
-    <section id="contact" suppressHydrationWarning className="relative py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <p className="font-mono text-sm text-[#8A8A8A] mb-2">
-            <span className="text-[#8A8A8A]">$</span> cat contact.sh
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-4">
-            Get In <span className="text-gradient">Touch</span>
-          </h2>
-          <p className="text-[#8A8A8A] mb-12">
-            Have a project in mind? Let&apos;s build something amazing together.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12">
+    <section id="contact" className="py-24 lg:py-40 px-6 lg:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            transition={{ duration: 0.5 }}
           >
-            <div className="rounded-lg border border-[#2A2A2A] bg-[#0a0a0a] p-6">
-              <p className="font-mono text-xs text-[#C084FC] mb-4">
-                $ cat contact_info.txt
-              </p>
-              <div className="space-y-4">
-                <a
-                  href="mailto:bhiwapurkarkashish0836@gmail.com"
-                  className="flex items-center gap-3 text-[#CCCCCC] hover:text-[#C084FC] transition-colors"
-                >
-                  <Mail className="w-5 h-5" />
-                  <span className="font-mono text-sm">bhiwapurkarkashish0836@gmail.com</span>
-                </a>
-                <a
-                  href="tel:+918468883531"
-                  className="flex items-center gap-3 text-[#CCCCCC] hover:text-[#C084FC] transition-colors"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span className="font-mono text-sm">+91 8468883531</span>
-                </a>
-                <a
-                  href="https://github.com/kashish836"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-[#CCCCCC] hover:text-[#C084FC] transition-colors"
-                >
-                  <GitBranch className="w-5 h-5" />
-                  <span className="font-mono text-sm">github.com/kashish836</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/kashish-bhiwapurkar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-[#CCCCCC] hover:text-[#C084FC] transition-colors"
-                >
-                  <Globe className="w-5 h-5" />
-                  <span className="font-mono text-sm">linkedin.com/in/kashish-bhiwapurkar</span>
-                </a>
-              </div>
-            </div>
+            <p className="section-label mb-6">10 / Contact</p>
 
-            <a
-              href="/Kashish_Bhiwapurkar_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-6 py-3 bg-[#C084FC] text-[#050505] font-mono text-sm font-semibold rounded-lg hover:bg-[#A78BFA] transition-colors text-center"
-            >
-              Download Resume
-            </a>
+            <h2 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
+              Get in touch
+            </h2>
+
+            <p className="text-xl text-[#a1a1aa] mb-16 max-w-lg mx-auto">
+              Open to internships, collaborations, and interesting problems.
+            </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto"
           >
-            <form
-              onSubmit={handleSubmit}
-              className="rounded-lg border border-[#2A2A2A] bg-[#0a0a0a] p-6 space-y-4"
-            >
-              <div>
-                <label className="block font-mono text-xs text-[#8A8A8A] mb-2">
-                  name:
-                </label>
-                <input
-                  suppressHydrationWarning
-                  type="text"
-                  value={formState.name}
-                  onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  required
-                  className="w-full bg-[#111111] border border-[#2A2A2A] rounded-lg px-4 py-2 text-sm text-[#F5F5F5] placeholder-[#8A8A8A] focus:outline-none focus:border-[#C084FC] transition-colors font-mono"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block font-mono text-xs text-[#8A8A8A] mb-2">
-                  email:
-                </label>
-                <input
-                  suppressHydrationWarning
-                  type="email"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  required
-                  className="w-full bg-[#111111] border border-[#2A2A2A] rounded-lg px-4 py-2 text-sm text-[#F5F5F5] placeholder-[#8A8A8A] focus:outline-none focus:border-[#C084FC] transition-colors font-mono"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block font-mono text-xs text-[#8A8A8A] mb-2">
-                  message:
-                </label>
-                <textarea
-                  suppressHydrationWarning
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  required
-                  rows={4}
-                  className="w-full bg-[#111111] border border-[#2A2A2A] rounded-lg px-4 py-2 text-sm text-[#F5F5F5] placeholder-[#8A8A8A] focus:outline-none focus:border-[#C084FC] transition-colors font-mono resize-none"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-              <button
-                suppressHydrationWarning
-                type="submit"
-                disabled={sending}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#C084FC] text-[#050505] font-mono text-sm font-semibold rounded-lg hover:bg-[#A78BFA] transition-colors disabled:opacity-50"
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  link.href.startsWith("http")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                className="group flex items-center gap-4 p-5 border border-white/5 bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.04] transition-colors text-left"
               >
-                {submitted ? (
-                  "Message Sent!"
-                ) : sending ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </>
-                )}
-              </button>
-            </form>
+                <div className="p-2.5 bg-white/5 group-hover:bg-white/10 transition-colors">
+                  <link.icon className="w-5 h-5 text-[#a1a1aa] group-hover:text-white transition-colors" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-white">
+                    {link.label}
+                  </p>
+                  <p className="text-xs text-[#71717a] truncate">
+                    {link.handle}
+                  </p>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-[#71717a] group-hover:text-white transition-colors shrink-0" />
+              </a>
+            ))}
           </motion.div>
         </div>
       </div>

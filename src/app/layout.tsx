@@ -1,31 +1,50 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Fira_Code, Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-});
-
-const firaCode = Fira_Code({
-  variable: "--font-fira",
-  subsets: ["latin"],
-});
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Kashish Bhiwapurkar | AI Engineer & Developer",
-  description: "Portfolio of Kashish Bhiwapurkar - AI Engineer, ML Enthusiast, Flutter Developer building intelligent systems that solve real-world problems.",
-  keywords: ["Kashish Bhiwapurkar", "AI Engineer", "Machine Learning", "Flutter Developer", "Portfolio", "ISL Translator"],
+  title: "Kashish Bhiwapurkar | AI/ML Engineer",
+  description:
+    "Data Science student building practical AI/ML systems across machine learning, deep learning, computer vision, cloud AI, and software development.",
+  keywords: [
+    "Kashish Bhiwapurkar",
+    "AI Engineer",
+    "Machine Learning",
+    "Computer Vision",
+    "Data Science",
+    "Portfolio",
+    "ISL Translator",
+    "AWS",
+  ],
   authors: [{ name: "Kashish Bhiwapurkar" }],
   openGraph: {
-    title: "Kashish Bhiwapurkar | AI Engineer & Developer",
-    description: "Building intelligent systems that solve real-world problems.",
+    title: "Kashish Bhiwapurkar | AI/ML Engineer",
+    description:
+      "Data Science student building practical AI/ML systems.",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kashish Bhiwapurkar | AI/ML Engineer",
+    description:
+      "Data Science student building practical AI/ML systems.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -37,31 +56,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jetbrainsMono.variable} ${firaCode.variable} ${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            // Block Dashlane from setting fdprocessedid on any element
-            var origSetAttribute = Element.prototype.setAttribute;
-            Element.prototype.setAttribute = function(name, value) {
-              if (name === 'fdprocessedid') return;
-              return origSetAttribute.call(this, name, value);
-            };
-            var origSetAttributeNode = Element.prototype.setAttributeNode;
-            Element.prototype.setAttributeNode = function(attr) {
-              if (attr && attr.name === 'fdprocessedid') return attr;
-              return origSetAttributeNode.call(this, attr);
-            };
-          })();
-        ` }} />
-        <style>{`
-          * { cursor: none !important; }
-          @media (pointer: coarse) { * { cursor: auto !important; } }
-        `}</style>
-      </head>
-      <body className="min-h-full flex flex-col bg-[#050505]" suppressHydrationWarning>{children}</body>
+      <link
+        rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text x='50' y='68' font-family='system-ui' font-size='55' font-weight='700' fill='%23fff' text-anchor='middle'>K</text></svg>"
+      />
+      <body
+        className="min-h-full bg-black text-white"
+        suppressHydrationWarning
+      >
+        {children}
+      </body>
     </html>
   );
 }

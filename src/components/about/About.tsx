@@ -2,140 +2,93 @@
 
 import { motion } from "framer-motion";
 
+const interests = [
+  "Machine Learning",
+  "Deep Learning",
+  "Computer Vision",
+  "Generative AI",
+  "Cloud AI",
+  "Data Science",
+  "Frontend / UI",
+];
+
 export default function About() {
   return (
-    <section id="about" className="relative py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <p className="font-mono text-sm text-[#8A8A8A] mb-2">
-            <span className="text-[#8A8A8A]">$</span> cat about.md
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            <span className="text-gradient">About Me</span>
-          </h2>
-        </motion.div>
+    <section id="about" className="py-24 lg:py-32 px-6 lg:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-4">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="section-label mb-4">01 / About</p>
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
+                My story
+              </h2>
+            </motion.div>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="rounded-lg border border-[#2A2A2A] bg-[#0a0a0a] p-6">
-              <p className="font-mono text-sm text-[#8A8A8A] mb-4">
-                <span className="text-[#C084FC]">const</span> kashish = <span className="text-[#8A8A8A]">{"{"}</span>
+          <div className="lg:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="space-y-8"
+            >
+              <p className="text-xl lg:text-2xl text-[#d4d4d8] leading-relaxed">
+                I&apos;m a{" "}
+                <span className="text-white font-medium">
+                  Data Science student
+                </span>{" "}
+                at G H Raisoni College of Engineering, Nagpur. I build
+                intelligent systems that solve practical problems.
               </p>
-              <div className="pl-6 space-y-2 font-mono text-sm">
-                <p>
-                  <span className="text-[#C084FC]">name</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;Kashish Bhiwapurkar&quot;</span>,
+
+              <p className="text-lg text-[#a1a1aa] leading-relaxed">
+                My work spans machine learning, deep learning, computer vision,
+                generative AI, cloud AI, and frontend development. I take ideas
+                from notebooks and turn them into working applications.
+              </p>
+
+              <div className="pt-4">
+                <p className="text-sm font-mono text-[#71717a] mb-4 uppercase tracking-wider">
+                  What I work with
                 </p>
-                <p>
-                  <span className="text-[#C084FC]">role</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;AI Engineer &amp; Developer&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">education</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;B.Tech Data Science&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">college</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;G.H. Raisoni College of Engineering, Nagpur&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">cgpa</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;8.39&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">graduation</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;2028&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">focus</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;AI/ML, Computer Vision, Mobile Dev&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">passion</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;Building Intelligent Systems&quot;</span>,
-                </p>
-                <p>
-                  <span className="text-[#C084FC]">motto</span>:{" "}
-                  <span className="text-[#4ADE80]">&quot;Building intelligent systems for a better tomorrow.&quot;</span>,
-                </p>
+                <div className="flex flex-wrap gap-2">
+                  {interests.map((interest) => (
+                    <span
+                      key={interest}
+                      className="px-3 py-2 text-sm font-medium text-[#d4d4d8] border border-white/10 bg-white/[0.02] hover:border-white/20 hover:text-white transition-colors"
+                    >
+                      {interest}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <p className="font-mono text-sm text-[#8A8A8A] mt-4">{"}"};</p>
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <p className="text-[#CCCCCC] leading-relaxed">
-              Hi, I&apos;m Kashish Bhiwapurkar, a third-year B.Tech Data Science student
-              at G. H. Raisoni College of Engineering, Nagpur, with a passion for
-              Artificial Intelligence, Machine Learning, Computer Vision, and Mobile
-              Development. My journey started with curiosity and evolved into building
-              AI-powered solutions that make a real difference. From creating an ISL
-              Translator that bridges communication gaps for the deaf community to
-              participating in hackathons that push creative boundaries, I&apos;m always
-              seeking the next challenge.
-            </p>
-            <p className="text-[#CCCCCC] leading-relaxed">
-              I believe technology should be accessible, impactful, and human-centered.
-              When I&apos;m not coding, you&apos;ll find me exploring startup ideas, diving
-              into research papers, or mentoring juniors in tech communities. I&apos;m
-              driven by the belief that intelligent systems can reshape how we live,
-              learn, and connect with the world.
-            </p>
-
-            <div>
-              <p className="font-mono text-sm text-[#8A8A8A] mb-3">
-                <span className="text-[#C084FC]">//</span> Currently exploring
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["LLMs", "NLP", "System Design", "Advanced AI Engineering"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 rounded-md border border-[#2A2A2A] bg-[#111111] text-xs font-mono text-[#C084FC]"
-                  >
-                    {tag}
-                  </span>
+              <div className="pt-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { label: "Focus", value: "AI/ML" },
+                  { label: "Role", value: "Builder" },
+                  { label: "Education", value: "B.Tech DS" },
+                  { label: "CGPA", value: "3.39" },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <p className="text-xs font-mono text-[#71717a] mb-1 uppercase tracking-wider">
+                      {item.label}
+                    </p>
+                    <p className="text-lg font-semibold text-white">
+                      {item.value}
+                    </p>
+                  </div>
                 ))}
               </div>
-            </div>
-
-            <div className="flex flex-wrap gap-3 pt-4">
-              {[
-                "Python",
-                "Dart",
-                "JavaScript",
-                "TensorFlow",
-                "PyTorch",
-                "Flutter",
-                "React",
-                "Next.js",
-                "OpenCV",
-                "MediaPipe",
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 rounded-md border border-[#2A2A2A] bg-[#111111] text-xs font-mono text-[#A78BFA]"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
