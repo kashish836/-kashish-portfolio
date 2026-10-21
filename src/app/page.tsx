@@ -10,6 +10,7 @@ import AWS from "@/components/aws/AWS";
 import Education from "@/components/education/Education";
 import Hackathons from "@/components/hackathons/Hackathons";
 import CurrentLearning from "@/components/current-learning/CurrentLearning";
+import ResearchInterests from "@/components/research/ResearchInterests";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 
@@ -35,6 +36,8 @@ export default function Home() {
         <Education />
         <div className="section-divider" />
         <CurrentLearning />
+        <div className="section-divider" />
+        <ResearchInterests />
         <div className="section-divider" />
         <Contact />
       </main>

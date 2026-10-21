@@ -26,7 +26,7 @@ export default function About() {
             >
               <p className="section-label mb-4">01 / About</p>
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
-                My story
+                About me
               </h2>
             </motion.div>
           </div>
@@ -42,16 +42,24 @@ export default function About() {
               <p className="text-xl lg:text-2xl text-[#d4d4d8] leading-relaxed">
                 I&apos;m a{" "}
                 <span className="text-white font-medium">
-                  Data Science student
+                  third-year Data Science student
                 </span>{" "}
-                at G H Raisoni College of Engineering, Nagpur. I build
-                intelligent systems that solve practical problems.
+                at G H Raisoni College of Engineering, Nagpur, focused on
+                AI/ML engineering and computer vision.
               </p>
 
               <p className="text-lg text-[#a1a1aa] leading-relaxed">
-                My work spans machine learning, deep learning, computer vision,
-                generative AI, cloud AI, and frontend development. I take ideas
-                from notebooks and turn them into working applications.
+                I build practical AI applications. My strongest work is in
+                real-time hand-gesture recognition, multimodal AI workflows,
+                and intelligent systems that turn technical ideas into usable
+                applications. I care about honest evaluation, documenting
+                limitations, and shipping things that work.
+              </p>
+
+              <p className="text-lg text-[#a1a1aa] leading-relaxed">
+                Currently exploring healthcare AI and medical computer vision as
+                research directions. Open to AI/ML internships where I can
+                contribute to meaningful projects.
               </p>
 
               <div className="pt-4">
@@ -75,7 +83,7 @@ export default function About() {
                   { label: "Focus", value: "AI/ML" },
                   { label: "Role", value: "Builder" },
                   { label: "Education", value: "B.Tech DS" },
-                  { label: "CGPA", value: "3.39" },
+                  { label: "CGPA", value: "8.39" },
                 ].map((item) => (
                   <div key={item.label}>
                     <p className="text-xs font-mono text-[#71717a] mb-1 uppercase tracking-wider">

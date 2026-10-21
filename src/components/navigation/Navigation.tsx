@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "@/components/theme-toggle/ThemeToggle";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -77,24 +78,27 @@ export default function Navigation() {
               ))}
             </div>
 
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden flex flex-col gap-1.5 p-2"
-              aria-label="Toggle menu"
-            >
-              <motion.span
-                animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="block w-5 h-px bg-white"
-              />
-              <motion.span
-                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block w-5 h-px bg-white"
-              />
-              <motion.span
-                animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="block w-5 h-px bg-white"
-              />
-            </button>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="md:hidden flex flex-col gap-1.5 p-2"
+                aria-label="Toggle menu"
+              >
+                <motion.span
+                  animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                  className="block w-5 h-px bg-white"
+                />
+                <motion.span
+                  animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                  className="block w-5 h-px bg-white"
+                />
+                <motion.span
+                  animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                  className="block w-5 h-px bg-white"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </nav>

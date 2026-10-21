@@ -21,6 +21,14 @@ const experiences = [
   },
   {
     period: "2025",
+    role: "Technical Intern",
+    organization: "MentoraAI",
+    description:
+      "Handled technical documentation, research analysis, and workflow documentation for AI-related projects. Contributed to organizing technical material and internal processes.",
+    tags: ["Technical Documentation", "Research", "AI"],
+  },
+  {
+    period: "2025",
     role: "Virtual Intern",
     organization: "Deloitte",
     description:

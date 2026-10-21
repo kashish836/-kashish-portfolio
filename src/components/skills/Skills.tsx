@@ -4,54 +4,62 @@ import { motion } from "framer-motion";
 
 const skillGroups = [
   {
-    title: "Languages",
-    skills: ["Python", "C++", "SQL", "JavaScript", "HTML", "CSS"],
+    title: "Programming",
+    skills: ["Python", "C++", "SQL"],
   },
   {
     title: "Machine Learning",
     skills: [
       "Scikit-learn",
-      "TensorFlow",
-      "Keras",
-      "PyTorch",
+      "Feature Engineering",
+      "Model Evaluation",
       "Pandas",
       "NumPy",
+      "Matplotlib",
     ],
   },
   {
-    title: "AI",
+    title: "Deep Learning",
+    skills: ["TensorFlow", "Keras", "PyTorch (Familiar with)"],
+  },
+  {
+    title: "Computer Vision",
     skills: [
-      "Machine Learning",
-      "Deep Learning",
-      "Computer Vision",
+      "OpenCV",
+      "MediaPipe",
+      "Image Processing",
+      "Landmark Detection",
+      "Object Detection",
+    ],
+  },
+  {
+    title: "AI Applications",
+    skills: [
+      "LLM Integration",
+      "Embeddings",
+      "RAG",
+      "Whisper",
+      "OCR",
       "NLP",
-      "Generative AI",
     ],
   },
   {
-    title: "Tools / Platforms",
+    title: "Mobile & Deployment",
     skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Jupyter",
-      "Google Colab",
-      "AWS",
+      "Flutter",
+      "TensorFlow Lite",
+      "Streamlit",
+      "API Integration",
       "Vercel",
-      "Supabase",
-      "Figma",
     ],
   },
   {
-    title: "Frontend / Design",
-    skills: [
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Figma",
-      "Responsive UI",
-      "UI/UX",
-    ],
+    title: "Tools",
+    skills: ["Git", "GitHub", "VS Code", "Docker", "Jupyter", "Google Colab"],
+  },
+  {
+    title: "Data",
+    skills: ["NumPy", "Pandas", "Matplotlib", "Data Cleaning"],
   },
 ];
 
@@ -69,15 +77,16 @@ export default function Skills() {
             >
               <p className="section-label mb-4">05 / Skills</p>
               <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
-                Tech stack
+                Technical skills
               </h2>
               <p className="text-[#71717a] mt-4 text-sm">
-                Technologies I use to build ML models and applications.
+                Grouped by category so recruiters can quickly assess fit.
+                Skills marked as familiar are areas I am actively learning.
               </p>
             </motion.div>
           </div>
 
-          <div className="lg:col-span-8 space-y-12">
+          <div className="lg:col-span-8 space-y-10">
             {skillGroups.map((group) => (
               <motion.div
                 key={group.title}

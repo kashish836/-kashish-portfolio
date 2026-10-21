@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/lib/theme-context";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,9 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kashish Bhiwapurkar | AI/ML Engineer",
+  title: "Kashish Bhiwapurkar | AI/ML & Computer Vision Engineer",
   description:
-    "Data Science student building practical AI/ML systems across machine learning, deep learning, computer vision, cloud AI, and software development.",
+    "AI/ML and Computer Vision engineer in training. B.Tech Data Science student at GHRCE building practical AI applications in hand-gesture recognition, multimodal AI, and intelligent systems.",
   keywords: [
     "Kashish Bhiwapurkar",
     "AI Engineer",
@@ -30,17 +31,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Kashish Bhiwapurkar" }],
   openGraph: {
-    title: "Kashish Bhiwapurkar | AI/ML Engineer",
+    title: "Kashish Bhiwapurkar | AI/ML & Computer Vision Engineer",
     description:
-      "Data Science student building practical AI/ML systems.",
+      "Building practical AI applications in computer vision, multimodal AI, and intelligent systems.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kashish Bhiwapurkar | AI/ML Engineer",
+    title: "Kashish Bhiwapurkar | AI/ML & Computer Vision Engineer",
     description:
-      "Data Science student building practical AI/ML systems.",
+      "Building practical AI applications in computer vision, multimodal AI, and intelligent systems.",
   },
   robots: {
     index: true,
@@ -67,7 +68,7 @@ export default function RootLayout({
         className="min-h-full bg-black text-white"
         suppressHydrationWarning
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
